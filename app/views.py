@@ -1,10 +1,11 @@
 from app import db, models, app
-from flask import request
+from flask import request, render_template
 
 
 @app.route('/', methods=['GET'])
 def index():
-    return 'Hello world!'
+    print models.Coordinates.query.all()
+    return render_template('map_frontend.html', coordinates = models.Coordinates.query.all())
 
 @app.route('/health', methods=['GET'])
 def health():
