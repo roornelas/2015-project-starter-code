@@ -18,7 +18,11 @@
     {% for item in coordinates %}
       map.addMarker({
         lat: {{item.latitude}},
-        lng: {{item.longitude}}            
+        lng: {{item.longitude}},
+        title: {{item.notes}},
+        infoWindow: {
+          content: {{item.notes}}
+        }           
       });
     {% endfor %}
     map.fitZoom();
