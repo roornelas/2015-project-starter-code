@@ -19,9 +19,9 @@
       map.addMarker({
         lat: {{item.latitude}},
         lng: {{item.longitude}},
-        title: {{item.notes}},
+        title: "{{item.notes}}",
         infoWindow: {
-          content: {{item.notes}}
+          content: "{{item.notes}}"
         }           
       });
     {% endfor %}
